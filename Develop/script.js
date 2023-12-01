@@ -3,7 +3,6 @@ var upperValues = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowerValues = "abcdefghijklmnopqrstuvwxyz";
 var numberValues = "0123456789";
 var specialValues = "!@#$%^&*()?.<>|=+:;,[-_]";
-var allPrompts = [];
 var keyLength = null;
 
 // Get references to the #generate element
@@ -18,9 +17,11 @@ function writePassword() {
     var lowerCase = confirm("You're password should have a lowercase letter!");
     var numericValues = confirm("You're password should have numeric values!");
     var specialCharacters = confirm("You're password should have special characters");
-    if (keyLength < 8 || keyLength > 128) {
-      characters = prompt("Choose a length between 8 and 128");
-    };
+    allPrompts = [""];
+
+    while (keyLength < 8 || keyLength > 128 || isNaN(keyLength)) {
+      keyLength = Number(prompt("Choose a length between 8 and 128"));
+    }
 
     if (capitalLetters === true){
       allPrompts += upperValues ;
