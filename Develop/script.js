@@ -13,15 +13,26 @@ function writePassword() {
   // Pop up prompts for password
     // Identifying criteria
     keyLength = Number(prompt("Choose a length between 8 and 128"));
-    var capitalLetters = confirm("You're password should have an uppercase letter!");
-    var lowerCase = confirm("You're password should have a lowercase letter!");
-    var numericValues = confirm("You're password should have numeric values!");
-    var specialCharacters = confirm("You're password should have special characters");
-    allPrompts = [""];
 
     while (keyLength < 8 || keyLength > 128 || isNaN(keyLength)) {
+      window.alert("Please choose a number between 8 and 128");
       keyLength = Number(prompt("Choose a length between 8 and 128"));
     }
+
+    var capitalLetters = confirm("Press \"OK\" to confirm you would like capital letters in your password!");
+    var lowerCase = confirm("Press \"OK\" to confirm you would like lower case letters in your password!");
+    var numericValues = confirm("Press \"OK\" to confirm you would like number values in your password!");
+    var specialCharacters = confirm("Press \"OK\" to confirm you would like special characters in your password!");
+
+    while (capitalLetters === false && lowerCase === false && numericValues === false && specialCharacters === false){
+      window.alert("Please confirm atleast one character type");
+      capitalLetters = confirm("Press \"OK\" to confirm you would like capital letters in your password!");
+      lowerCase = confirm("Press \"OK\" to confirm you would like lower case letters in your password!");
+      numericValues = confirm("Press \"OK\" to confirm you would like number values in your password!");
+      specialCharacters = confirm("Press \"OK\" to confirm you would like special characters in your password!");
+    }
+
+    allPrompts = [""];
 
     if (capitalLetters === true){
       allPrompts += upperValues ;
