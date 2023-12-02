@@ -23,7 +23,7 @@ function writePassword() {
     // Confirming or not what values the user wants
     var capitalLetters = confirm("Press \"OK\" to confirm you would like capital letters in your password!");
     var lowerCase = confirm("Press \"OK\" to confirm you would like lower case letters in your password!");
-    var numericValues = confirm("Press \"OK\" to confirm you would like number values in your password!");
+    var numericValues = confirm("Press \"OK\" to confirm you would like numeric values in your password!");
     var specialCharacters = confirm("Press \"OK\" to confirm you would like special characters in your password!");
 
     // Checks to make sure the user selected atleast one character to use
@@ -31,7 +31,7 @@ function writePassword() {
       window.alert("Please confirm atleast one character type");
       capitalLetters = confirm("Press \"OK\" to confirm you would like capital letters in your password!");
       lowerCase = confirm("Press \"OK\" to confirm you would like lower case letters in your password!");
-      numericValues = confirm("Press \"OK\" to confirm you would like number values in your password!");
+      numericValues = confirm("Press \"OK\" to confirm you would like numeric values in your password!");
       specialCharacters = confirm("Press \"OK\" to confirm you would like special characters in your password!");
     }
 
